@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktifkan PIK-R Sekarang - Ceria & Kreatif V2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+            color: var(--hitam-teks);
+        }
+
+        /* Warna Utama */
+        :root {
+            --biru-utama: #007BFF;
+            --biru-muda: #6cace4;
+            --oranye-cerah: #FFA500;
+            --kuning-tua: #FFC107;
+            --putih: #FFFFFF;
+            --hitam-teks: #333333;
+            --abu-abu-latar: #f0f4f8;
+            --kuning-muda-bg: #FFFACD;
+            --kuning-card: #FFEB3B;
+            --oranye-card: #FF9800;
+            --ungu-ai-card: #8e44ad;
+        }
+
+        .hero-gradient-animated {
+            background: linear-gradient(270deg, /* Default direction for desktop */
+                var(--biru-utama) 0%,
+                var(--biru-muda) 25%,
+                var(--kuning-tua) 50%,
+                var(--oranye-cerah) 75%,
+                var(--biru-utama) 100%); /* Loop back to start color for smoother transition */
+            background-size: 200% 100%; /* Adjusted for horizontal animation */
+            animation: gradientWaveAnimationDesktop 10s ease-in-out infinite;
+            position: relative;
+        }
+
+        .hero-gradient-animated::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=PIK-R+Bergerak,+Remaja+Berdampak!');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.20;
+            z-index: 0;
+        }
+
+        /* Animasi gradien untuk Desktop (kanan-kiri) */
+        @keyframes gradientWaveAnimationDesktop {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Animasi gradien untuk Mobile (atas-bawah) */
+        @keyframes gradientWaveAnimationMobile {
+            0%   { background-position: 50% 0%; }
+            50%  { background-position: 50% 100%; }
+            100% { background-position: 50% 0%; }
+        }
+
+        @media (max-width: 767px) {
+            .hero-gradient-animated {
+                background: linear-gradient(0deg, /* Direction for mobile (top-bottom) */
+                    var(--biru-utama) 0%,
+                    var(--biru-muda) 25%,
+                    var(--kuning-tua) 50%,
+                    var(--oranye-cerah) 75%,
+                    var(--biru-utama) 100%);
+                background-size: 100% 200%; /* Adjusted for vertical animation */
+                animation-name: gradientWaveAnimationMobile;
+                animation-duration: 10s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+            }
+            .hero-gradient-animated::before {
+                opacity: 0.2;
+                background-image: url('https://placehold.co/800x600/000000/FFFFFF?text=PIK-R!');
+            }
+            .hero-text-content {
+                max-width: 100%;
+                margin-right: 0;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+             #central-button {
+                width: 100px;
+                height: 100px;
+                font-size: 0.7rem;
+            }
+             #central-button::after {
+                top: -5px; left: -5px; right: -5px; bottom: -5px; border-width: 2px;
+            }
+            .radial-menu-container {
+                width: 320px; 
+                height: 320px; 
+            }
+            .radial-menu-item {
+                width: 75px; 
+                height: 75px; 
+            }
+            .radial-menu-item i {
+                font-size: 1.6rem; 
+            }
+        }
+
+        .hero-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: inherit;
+            width: 100%;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content-wrapper {
+                flex-direction: row;
+                justify-content: space-around;
+                text-align: left;
+            }
+            .hero-text-content {
+                max-width: 50%;
+                margin-right: 2rem;
+            }
+            .interactive-area-wrapper {
+                margin-left: 2rem;
+            }
+        }
+
+        #central-button {
+            background-color: var(--kuning-tua);
+            color: var(--hitam-teks);
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.8rem; 
+            line-height: 1.1;
+            padding: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            animation: pulseAnimation 2s infinite ease-in-out, popInAnimation 0.5s ease-out 0.1s forwards;
+            z-index: 10;
+            position: relative;
+            border: none;
+        }
+
+        #central-button::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border: 3px solid var(--putih);
+            border-radius: 50%;
+            animation: blinkStrokeAnimation 1s infinite;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        @keyframes blinkStrokeAnimation {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.03); }
+        }
+
+        @keyframes popInAnimation {
+             from { transform: scale(0); }
+             to { transform: scale(1); }
+        }
+
+        @keyframes pulseAnimation {
+            0% { box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4); }
+            50% { box-shadow: 0 12px 35px rgba(255, 193, 7, 0.7); }
+            100% { box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4); }
+        }
+
+        #central-button:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transform: scale(1.03);
+        }
+
+        .interactive-area-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .radial-menu-container {
+            position: absolute;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 380px; 
+            height: 380px; 
+            pointer-events: none; 
+            z-index: 5;
+        }
+
+        .radial-menu-item {
+            position: absolute;
+            background-color: var(--kuning-tua);
+            color: var(--putih);
+            width: 90px; 
+            height: 90px; 
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.7rem; 
+            font-weight: 600;
+            opacity: 0; 
+            transform: translate(-50%, -50%) scale(0.5); 
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+            cursor: pointer;
+            pointer-events: none; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .radial-menu-item.show {
+            opacity: 1; 
+            transform: translate(var(--tx), var(--ty)) translate(-50%, -50%) scale(1); 
+            pointer-events: auto; 
+        }
+
+        .radial-menu-item:hover {
+            background-color: var(--oranye-cerah);
+            transform: translate(var(--tx), var(--ty)) translate(-50%, -50%) scale(1.15) !important; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .radial-menu-item i {
+            font-size: 1.8rem; 
+            margin-bottom: 5px;
+        }
+
+        .radial-menu-item span {
+            display: block;
+            line-height: 1.1;
+            padding: 0 3px;
+        }
+
+        .message-box {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background-color: var(--hitam-teks); color: var(--putih);
+            padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000; opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            font-weight: 600;
+        }
+        .message-box.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(-10px); }
+
+        .video-frame {
+            background-color: var(--putih); padding: 15px; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden;
+        }
+        .video-frame iframe { border-radius: 8px; width: 100%; aspect-ratio: 16 / 9; }
+
+        .custom-card {
+            background-color: var(--putih); border-radius: 12px; padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .custom-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+
+        .icon-download, .icon-view { font-size: 1.8rem; color: var(--biru-utama); }
+
+        .program-icon-container {
+            width: 100px; height: 100px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 15px auto; font-size: 2.5rem;
+        }
+
+        .bank-file-card-1 { background-color: var(--biru-muda) !important; }
+        .bank-file-card-2 { background-color: var(--oranye-card) !important; }
+        .bank-file-card-3 { background-color: var(--kuning-card) !important; }
+        .ide-program-card-1 { background-color: var(--biru-muda) !important; }
+        .ide-program-card-2 { background-color: var(--kuning-card) !important; }
+        .ide-program-card-3 { background-color: #A5D6A7 !important; }
+        
+        .ide-program-card-ai {
+            background-color: var(--ungu-ai-card) !important;
+        }
+        .ide-program-card-ai h3, .ide-program-card-ai p {
+            color: var(--putih) !important;
+        }
+        .ide-program-card-ai .program-icon-container {
+            background: linear-gradient(to bottom right, #d1c4e9, var(--putih), #b39ddb) !important;
+            color: var(--ungu-ai-card) !important;
+        }
+        .ai-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+            font-size: 0.65rem;
+            padding: 3px 6px;
+            border-radius: 10px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .typing-effect {
+            border-right: .15em solid var(--kuning-tua);
+            animation: blink-caret .75s step-end infinite;
+            word-break: break-word; 
+        }
+        .typing-effect.no-cursor {
+             border-right-color: transparent; 
+             animation: none; 
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--kuning-tua); }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: var(--putih);
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 600px; /* Default max-width */
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.show .modal-content {
+            transform: scale(1);
+        }
+        .modal-close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--hitam-teks);
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+        }
+        .modal-close-button:hover {
+            color: var(--oranye-cerah);
+        }
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--biru-utama);
+        }
+        /* Shelf Check Modal Specific Styles */
+        .shelf-check-modal .modal-title {
+            background: linear-gradient(to right, var(--biru-utama), var(--kuning-tua), var(--oranye-cerah));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+        .quiz-question { margin-bottom: 15px; }
+        .quiz-question p { font-size: 1.1rem; margin-bottom: 10px; color: var(--hitam-teks); }
+        .quiz-options label {
+            display: block;
+            background-color: var(--abu-abu-latar);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .quiz-options label:hover { background-color: #e0e8f0; }
+        .quiz-options input[type="radio"] { margin-right: 10px; }
+        .quiz-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            margin-top: 15px;
+        }
+        .quiz-button.next { background-color: var(--biru-utama); color: var(--putih); }
+        .quiz-button.next:hover { background-color: #0056b3; transform: translateY(-2px); }
+        .quiz-button.submit { background-color: var(--oranye-cerah); color: var(--putih); }
+        .quiz-button.submit:hover { background-color: #e69500; transform: translateY(-2px); }
+
+        /* Bank File Modal */
+        .bank-file-modal .pdf-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .bank-file-modal .pdf-list-item:last-child { border-bottom: none; }
+        .bank-file-modal .pdf-title { font-size: 1.1rem; color: var(--hitam-teks); }
+        .bank-file-modal .pdf-actions a {
+            margin-left: 15px;
+            color: var(--biru-utama);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .bank-file-modal .pdf-actions a:hover { color: var(--oranye-cerah); }
+        .bank-file-modal .pdf-actions i { margin-right: 5px; }
+
+        /* Masalah & Solusi Modal */
+        .solusi-modal .modal-title { color: var(--oranye-cerah); }
+        .solusi-modal p { line-height: 1.7; color: var(--hitam-teks); }
+
+        /* Testimoni Slick Carousel */
+        .testimonial-slider .slick-slide {
+            padding: 0 15px; /* Spacing between slides */
+        }
+        .testimonial-card {
+            background-color: var(--putih);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 15px 0; /* Vertical margin for shadow visibility */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            min-height: 380px; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px auto;
+            border: 4px solid var(--biru-muda);
+        }
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--hitam-teks);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+        .testimonial-quote::before {
+            content: '“';
+            font-size: 2rem;
+            color: var(--biru-muda);
+            margin-right: 5px;
+            vertical-align: -0.4em;
+            line-height: 0;
+        }
+        .testimonial-quote::after {
+            content: '”';
+            font-size: 2rem;
+            color: var(--biru-muda);
+            margin-left: 5px;
+            vertical-align: -0.4em;
+            line-height: 0;
+        }
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--biru-utama);
+            font-size: 1.1rem;
+        }
+        .slick-dots li button:before {
+            font-size: 12px;
+            color: var(--biru-utama);
+        }
+        .slick-dots li.slick-active button:before {
+            color: var(--oranye-cerah);
+        }
+        .slick-prev:before, .slick-next:before {
+            color: var(--biru-utama);
+            font-size: 25px;
+        }
+
+        /* Masalah PIK-R Section */
+        .masalah-card {
+            background-color: var(--putih);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .masalah-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .masalah-icon {
+            font-size: 2rem;
+            color: var(--oranye-cerah);
+            min-width: 30px; /* Ensure icon has space */
+        }
+        .masalah-text {
+            font-weight: 600;
+            color: var(--hitam-teks);
+        }
+
+        /* Floating WhatsApp Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366; /* Warna hijau WhatsApp */
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px; /* Ukuran ikon */
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+            z-index: 100; /* Pastikan di atas elemen lain */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1); /* Sedikit membesar saat hover */
+            background-color: #128C7E; /* Warna hijau WhatsApp lebih gelap */
+        }
+
+        @media (max-width: 767px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-[var(--abu-abu-latar)]">
+
+    <section id="hero" class="hero-gradient-animated min-h-screen flex items-center justify-center">
+        <div class="hero-content-wrapper">
+            <div class="hero-text-content md:text-left text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg" data-aos="fade-right" data-aos-delay="100">
+                    <u class="text-[var(--kuning-tua)]">gen<span class="text-[var(--biru-utama)]">re</span></u><span class="text-[var(--biru-utama)]">covery</span>
+                </h1>
+                <p id="hero-subtitle" class="text-lg md:text-xl lg:text-2xl text-gray-700 drop-shadow-md mb-8 md:mb-10" data-aos="fade-right" data-aos-delay="200">
+                    </p>
+            </div>
+
+            <div class="interactive-area-wrapper" data-aos="fade-left" data-aos-delay="300">
+                <button id="central-button" aria-label="Aktifkan PIK-R Sekarang">
+                    Aktifkan PIK-R
+                </button>
+                <div id="radial-menu" class="radial-menu-container">
+                    </div>
+            </div>
+        </div>
+        <div id="action-message" class="message-box">Pesan aksi!</div>
+    </section>
+
+    <section id="siga-pikr-section" class="py-16 px-6 bg-[var(--kuning-muda-bg)]">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--biru-utama)] mb-3" data-aos="fade-up">Siga PIK-R</h2>
+            <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Lihat keseruan dan kegiatan inspiratif kami melalui video berikut!
+            </p>
+            <div class="max-w-3xl mx-auto video-frame" data-aos="zoom-in" data-aos-delay="200">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="text-sm text-gray-500 mt-2">Contoh Video: Aktivitas Remaja Kreatif</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="shelf-check-section" class="py-16 px-6 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--biru-utama)] mb-10" data-aos="fade-up">Shelf Check PIK-R</h2>
+            <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Luangkan waktu sejenak untuk memahami dirimu lebih baik. Pilih salah satu cek di bawah ini untuk memulai.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <button class="shelf-check-button bg-[var(--biru-muda)] hover:bg-[var(--biru-utama)] text-white font-bold py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="200" data-check-id="1">
+                    <i class="fas fa-brain mr-2"></i> Cek Kesejahteraan Mental
+                </button>
+                <button class="shelf-check-button bg-[var(--kuning-card)] hover:bg-[var(--kuning-tua)] text-[var(--hitam-teks)] font-bold py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="300" data-check-id="2">
+                    <i class="fas fa-user-friends mr-2"></i> Cek Hubungan Sosial
+                </button>
+                <button class="shelf-check-button bg-[var(--oranye-card)] hover:bg-[var(--oranye-cerah)] text-white font-bold py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105" data-aos="fade-up" data-aos-delay="400" data-check-id="3">
+                    <i class="fas fa-lightbulb mr-2"></i> Cek Manajemen Stres
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="bank-file-section" class="py-16 px-6 bg-[var(--abu-abu-latar)]">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--biru-utama)]" data-aos="fade-up">Bank File PIK-R</h2>
+            <div class="grid md:grid-cols-3 gap-8 bank-file">
+                <div class="custom-card bank-file-card-1 flex flex-col justify-between p-6 bank-file-trigger" data-aos="fade-up" data-aos-delay="100" data-modul-id="modul1" data-title="Bank Modul 1: Materi Dasar">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Bank Modul 1</h3>
+                        <p class="text-sm text-gray-100">Akses PDF materi dasar.</p>
+                    </div>
+                    <button aria-label="Lihat Bank Modul 1" class="mt-4 text-white hover:text-gray-200 transition-colors self-start">
+                        <i class="fas fa-folder-open icon-view mr-2"></i> Lihat File
+                    </button>
+                </div>
+                <div class="custom-card bank-file-card-2 flex flex-col justify-between p-6 bank-file-trigger" data-aos="fade-up" data-aos-delay="200" data-modul-id="modul2" data-title="Bank Modul 2: Materi Lanjutan">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Bank Modul 2</h3>
+                        <p class="text-sm text-gray-100">Akses PDF materi lanjutan.</p>
+                    </div>
+                     <button aria-label="Lihat Bank Modul 2" class="mt-4 text-white hover:text-gray-200 transition-colors self-start">
+                        <i class="fas fa-folder-open icon-view mr-2"></i> Lihat File
+                    </button>
+                </div>
+                <div class="custom-card bank-file-card-3 flex flex-col justify-between p-6 bank-file-trigger" data-aos="fade-up" data-aos-delay="300" data-modul-id="modul3" data-title="Bank Modul 3: Studi Kasus">
+                    <div>
+                        <h3 class="text-xl font-bold text-[var(--hitam-teks)] mb-1">Bank Modul 3</h3>
+                        <p class="text-sm text-gray-700">Akses PDF studi kasus.</p>
+                    </div>
+                     <button aria-label="Lihat Bank Modul 3" class="mt-4 text-[var(--hitam-teks)] hover:text-gray-600 transition-colors self-start">
+                        <i class="fas fa-folder-open icon-view mr-2"></i> Lihat File
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ide-program-section" class="py-16 px-6 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--biru-utama)] mb-6" data-aos="fade-up">Ide Program Kekinian</h2>
+            <div class="text-center mb-10" data-aos="fade-up" data-aos-delay="50">
+                <button id="generate-ideas-button" class="bg-gradient-to-r from-[var(--oranye-cerah)] to-[var(--kuning-tua)] hover:from-[var(--kuning-tua)] hover:to-[var(--oranye-cerah)] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+                    <i class="fas fa-lightbulb mr-2"></i> ✨ Hasilkan Ide Program Baru
+                </button>
+                <p id="loading-ideas" class="text-gray-600 mt-3 text-sm" style="display: none;">
+                    <i class="fas fa-spinner fa-spin mr-2"></i>Sedang mencari ide program keren untukmu... Mohon tunggu sebentar.
+                </p>
+            </div>
+
+            <div id="program-ideas-grid" class="grid md:grid-cols-3 gap-x-8 gap-y-12">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="custom-card ide-program-card-1 p-6">
+                        <div class="program-icon-container bg-gradient-to-br from-[var(--putih)] via-[var(--kuning-tua)] to-[var(--putih)] text-[var(--biru-utama)]">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">Sebar Pesan Baik</h3>
+                        <p class="text-gray-100 text-sm">Aksi nyata menyebarkan semangat positif di lingkungan sekitar melalui media sosial atau kegiatan langsung.</p>
+                    </div>
+                    <p class="mt-4 text-lg font-bold text-[var(--biru-utama)]">Kampanye Positif</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="custom-card ide-program-card-2 p-6">
+                         <div class="program-icon-container bg-gradient-to-br from-[var(--putih)] via-[var(--oranye-cerah)] to-[var(--putih)] text-[var(--hitam-teks)]">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-[var(--hitam-teks)]">Ruang Bicara Aman</h3>
+                         <p class="text-gray-700 text-sm">Menyediakan wadah diskusi terbuka dan aman bagi remaja untuk berbagi cerita, pengalaman, dan mendapatkan dukungan sebaya.</p>
+                    </div>
+                    <p class="mt-4 text-lg font-bold text-[var(--biru-utama)]">Teman Curhat</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="custom-card ide-program-card-3 p-6">
+                        <div class="program-icon-container bg-gradient-to-br from-green-100 via-white to-green-200 text-green-700">
+                             <i class="fas fa-person-biking"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-[var(--hitam-teks)]">Kayuh Semangat</h3>
+                        <p class="text-gray-700 text-sm">Mengadakan kegiatan olahraga bersama seperti bersepeda santai untuk meningkatkan kesehatan fisik dan mental remaja.</p>
+                    </div>
+                    <p class="mt-4 text-lg font-bold text-[var(--biru-utama)]">Gowes Sehat</p>
+                </div>
+                 </div>
+        </div>
+    </section>
+
+    <section id="masalah-solusi-section" class="py-16 px-6 bg-[var(--abu-abu-latar)]">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--biru-utama)]" data-aos="fade-up">Masalah PIK-R dan Solusi Cepat</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="masalah-card" data-aos="fade-up" data-aos-delay="100" data-masalah-id="masalah1">
+                    <i class="fas fa-exclamation-circle masalah-icon"></i>
+                    <span class="masalah-text">Kurangnya Minat Remaja untuk Bergabung</span>
+                </div>
+                <div class="masalah-card" data-aos="fade-up" data-aos-delay="150" data-masalah-id="masalah2">
+                    <i class="fas fa-exclamation-circle masalah-icon"></i>
+                    <span class="masalah-text">Kesulitan Mencari Ide Program Kreatif</span>
+                </div>
+                <div class="masalah-card" data-aos="fade-up" data-aos-delay="200" data-masalah-id="masalah3">
+                    <i class="fas fa-exclamation-circle masalah-icon"></i>
+                    <span class="masalah-text">Kendala Pendanaan Kegiatan PIK-R</span>
+                </div>
+                <div class="masalah-card" data-aos="fade-up" data-aos-delay="250" data-masalah-id="masalah4">
+                    <i class="fas fa-exclamation-circle masalah-icon"></i>
+                    <span class="masalah-text">Promosi PIK-R Kurang Efektif</span>
+                </div>
+                <div class="masalah-card" data-aos="fade-up" data-aos-delay="300" data-masalah-id="masalah5">
+                    <i class="fas fa-exclamation-circle masalah-icon"></i>
+                    <span class="masalah-text">Manajemen Waktu Anggota yang Sulit</span>
+                </div>
+                <div class="masalah-card" data-aos="fade-up" data-aos-delay="350" data-masalah-id="masalah6">
+                    <i class="fas fa-exclamation-circle masalah-icon"></i>
+                    <span class="masalah-text">Regenerasi Pengurus yang Lambat</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimoni-section" class="py-16 px-6 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--biru-utama)]" data-aos="fade-up">Apa Kata Mereka?</h2>
+            <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card">
+                    <img src="https://placehold.co/100x100/EBF4FF/333333?text=AP" alt="Foto Testimoni Andini Putri" class="testimonial-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/EBF4FF/333333?text=Foto';">
+                    <p class="testimonial-quote">PIK-R ini benar-benar mengubah cara pandang saya. Banyak ilmu dan teman baru yang didapat. Seru banget!</p>
+                    <p class="testimonial-name">Andini Putri, Anggota PIK-R Ceria</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://placehold.co/100x100/FFF3E0/333333?text=BS" alt="Foto Testimoni Budi Santoso" class="testimonial-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFF3E0/333333?text=Foto';">
+                    <p class="testimonial-quote">Awalnya ragu, tapi setelah ikut kegiatan, jadi ketagihan. Programnya kreatif dan bermanfaat untuk remaja.</p>
+                    <p class="testimonial-name">Budi Santoso, Peserta Workshop</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://placehold.co/100x100/E8F5E9/333333?text=CL" alt="Foto Testimoni Citra Lestari" class="testimonial-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/E8F5E9/333333?text=Foto';">
+                    <p class="testimonial-quote">Sebagai orang tua, saya sangat mendukung anak saya aktif di PIK-R. Kegiatannya positif dan membangun karakter.</p>
+                    <p class="testimonial-name">Citra Lestari, Orang Tua Anggota</p>
+                </div>
+                 <div class="testimonial-card">
+                    <img src="https://placehold.co/100x100/FCE4EC/333333?text=DW" alt="Foto Testimoni Dewi Wijaya" class="testimonial-image" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FCE4EC/333333?text=Foto';">
+                    <p class="testimonial-quote">Lingkungan di PIK-R sangat suportif. Kita bisa bebas berekspresi dan belajar banyak hal baru bersama teman-teman.</p>
+                    <p class="testimonial-name">Dewi Wijaya, Konselor Sebaya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[var(--hitam-teks)] text-white text-center p-8">
+        <p class="text-sm">© <span id="current-year"></span> PIK-R Website Interaktif Ceria. 
+    </footer>
+
+    <div id="modal-container" class="modal-overlay">
+        <div id="modal-content-dynamic" class="modal-content">
+            </div>
+    </div>
+
+    <a href="https://wa.me/6285714775246" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat di WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll) library
+        AOS.init({
+            duration: 800, // Animation duration
+            once: false, // Whether animation should happen only once - while scrolling down
+            offset: 50, // Offset (in px) from the original trigger point
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // DOM Element selections
+            const centralButton = document.getElementById('central-button');
+            const radialMenuContainer = document.getElementById('radial-menu');
+            const actionMessage = document.getElementById('action-message');
+            let menuOpen = false; // State for radial menu
+
+            const heroSubtitleElement = document.getElementById('hero-subtitle');
+            const originalText = "Temukan duniamu, kembangkan potensimu bersama kami! Jadilah remaja unggul dan inspiratif.";
+            let charIndex = 0; // For typewriter effect
+
+            // Typewriter effect for hero subtitle
+            function typeWriter() {
+                if (heroSubtitleElement && charIndex < originalText.length) {
+                    heroSubtitleElement.textContent += originalText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 50); // Typing speed
+                } else if (heroSubtitleElement) {
+                     // Remove blinking cursor after typing is complete
+                     setTimeout(() => {
+                        heroSubtitleElement.classList.add('no-cursor'); 
+                    }, 500); 
+                }
+            }
+
+            // Initialize typewriter effect if element exists
+            if (heroSubtitleElement) {
+                heroSubtitleElement.classList.add('typing-effect');
+                heroSubtitleElement.textContent = ''; // Clear initial text
+                const aosDelay = parseInt(heroSubtitleElement.getAttribute('data-aos-delay')) || 0;
+                // Start typing after AOS animation delay + a bit more
+                setTimeout(() => {
+                    typeWriter();
+                }, aosDelay + 200); 
+            }
+            
+            // Data for radial menu items
+            const menuItemsData = [
+                { id: 'shelf-check-nav', label: 'Shelf Check', icon: 'fa-clipboard-check', actionText: 'Mari cek kondisi dirimu!', targetSection: '#shelf-check-section' },
+                { id: 'modul-materi', label: 'Bank Modul', icon: 'fa-book', actionText: 'Bank Modul Materi dibuka!', targetSection: '#bank-file-section' },
+                { id: 'ice-breaking', label: 'Ide Program', icon: 'fa-lightbulb', actionText: 'Ide Program inovatif sedang dicari!', targetSection: '#ide-program-section' },
+                { id: 'masalah-solusi-nav', label: 'Masalah & Solusi', icon: 'fa-medkit', actionText: 'Temukan solusi cepat di sini!', targetSection: '#masalah-solusi-section' },
+                { id: 'siga-pikr-nav', label: 'Siga PIK-R', icon: 'fa-play-circle', actionText: 'Menuju galeri video Siga PIK-R!', targetSection: '#siga-pikr-section' }
+            ];
+
+            // Function to display a temporary message at the bottom of the screen
+            function showMessage(text, isError = false) {
+                actionMessage.textContent = text;
+                actionMessage.classList.add('show');
+                if (isError) {
+                    actionMessage.style.backgroundColor = 'var(--oranye-cerah)'; // Error color
+                } else {
+                    actionMessage.style.backgroundColor = 'var(--hitam-teks)'; // Default color
+                }
+                // Hide message after a few seconds
+                setTimeout(() => {
+                    actionMessage.classList.remove('show');
+                }, 4000); 
+            }
+
+            // Create and append radial menu items
+            menuItemsData.forEach(itemData => {
+                const menuItem = document.createElement('div');
+                menuItem.classList.add('radial-menu-item');
+                menuItem.id = itemData.id;
+                menuItem.innerHTML = `<i class="fas ${itemData.icon}"></i><span>${itemData.label}</span>`;
+
+                // Event listener for each menu item
+                menuItem.addEventListener('click', () => {
+                    if (menuOpen) { // Only act if menu is open
+                        console.log(`${itemData.label} clicked`);
+                        showMessage(itemData.actionText); 
+
+                        // Scroll to target section if defined
+                        if (itemData.targetSection) {
+                            const section = document.querySelector(itemData.targetSection);
+                            if (section) {
+                                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }
+                        toggleRadialMenu(); // Close menu after action
+                    }
+                });
+                radialMenuContainer.appendChild(menuItem);
+            });
+
+            const radialMenuItems = Array.from(radialMenuContainer.children);
+
+            // Event listener for the central button to toggle the radial menu
+            centralButton.addEventListener('click', toggleRadialMenu);
+
+            // Function to toggle the radial menu (open/close)
+            function toggleRadialMenu() {
+                menuOpen = !menuOpen;
+                centralButton.setAttribute('aria-expanded', menuOpen.toString()); 
+                
+                // Get the actual dimensions of the radialMenuContainer
+                const containerWidth = radialMenuContainer.offsetWidth;
+                const containerHeight = radialMenuContainer.offsetHeight;
+                const centerX = containerWidth / 2;
+                const centerY = containerHeight / 2;
+
+                const radius = window.innerWidth <= 767 ? 120 : 145; // Responsive radius
+                const startAngle = -90; // Start angle for item positioning (top)
+                const angleIncrement = 360 / radialMenuItems.length; // Angle between items
+
+                if (menuOpen) {
+                    radialMenuContainer.style.pointerEvents = 'auto'; // Enable pointer events on container
+                    radialMenuItems.forEach((item, index) => {
+                        const angle = startAngle + (index * angleIncrement);
+                        const angleRad = angle * (Math.PI / 180); // Convert to radians
+                        
+                        // Calculate offset from the center of the container
+                        const offsetX = radius * Math.cos(angleRad);
+                        const offsetY = radius * Math.sin(angleRad);
+
+                        // Calculate final absolute position within the container for the item's center
+                        const finalX = centerX + offsetX;
+                        const finalY = centerY + offsetY;
+
+                        // Set custom properties for CSS transform
+                        // These values are now the target coordinates for the center of each item
+                        item.style.setProperty('--tx', `${finalX}px`);
+                        item.style.setProperty('--ty', `${finalY}px`);
+
+                        // Staggered animation for showing items
+                        setTimeout(() => {
+                            item.classList.add('show');
+                        }, index * 60); 
+                    });
+                } else {
+                    radialMenuContainer.style.pointerEvents = 'none'; // Disable pointer events
+                    // Staggered animation for hiding items (in reverse)
+                    radialMenuItems.forEach((item, index) => {
+                        // No need to recalculate position for hiding, just remove class
+                        setTimeout(() => {
+                            item.classList.remove('show');
+                        }, (radialMenuItems.length - 1 - index) * 40); 
+                    });
+                }
+            }
+
+            // Update radial menu positions on window resize if menu is open
+            window.addEventListener('resize', () => {
+                if (menuOpen) { 
+                    updateRadialMenuPositions();
+                }
+                AOS.refresh(); // Refresh AOS animations on resize
+            });
+
+            // Function to recalculate and update radial menu item positions
+            function updateRadialMenuPositions() {
+                if (!menuOpen) return; 
+
+                // Get the actual dimensions of the radialMenuContainer
+                const containerWidth = radialMenuContainer.offsetWidth;
+                const containerHeight = radialMenuContainer.offsetHeight;
+                const centerX = containerWidth / 2;
+                const centerY = containerHeight / 2;
+
+                const radius = window.innerWidth <= 767 ? 120 : 145; // Responsive radius. Adjusted from 100/125 to match toggleRadialMenu
+                const startAngle = -90;
+                const angleIncrement = 360 / radialMenuItems.length;
+
+                radialMenuItems.forEach((item, index) => {
+                    if (item.classList.contains('show')) { // Only update visible items
+                        const angle = startAngle + (index * angleIncrement);
+                        const angleRad = angle * (Math.PI / 180); // Corrected: Math.PI / 180
+                        
+                        // Calculate offset from the center of the container
+                        const offsetX = radius * Math.cos(angleRad);
+                        const offsetY = radius * Math.sin(angleRad);
+
+                        // Calculate final absolute position within the container for the item's center
+                        const finalX = centerX + offsetX;
+                        const finalY = centerY + offsetY;
+                        
+                        item.style.setProperty('--tx', `${finalX}px`);
+                        item.style.setProperty('--ty', `${finalY}px`);
+                    }
+                });
+            }
+
+            // Set current year in the footer
+            const currentYearElement = document.getElementById('current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+
+            // Refresh AOS when tab becomes visible again (handles cases where animations might get stuck)
+            document.addEventListener("visibilitychange", () => {
+                if (document.visibilityState === 'visible') {
+                    AOS.refresh();
+                }
+            });
+
+            // --- Gemini API Feature for Program Ideas ---
+            const generateIdeasButton = document.getElementById('generate-ideas-button');
+            const loadingIdeasText = document.getElementById('loading-ideas');
+            const programIdeasGrid = document.getElementById('program-ideas-grid');
+            let ideaCounter = 0; // To stagger AOS animations for new ideas
+
+            if (generateIdeasButton) {
+                generateIdeasButton.addEventListener('click', async () => {
+                    loadingIdeasText.style.display = 'block'; // Show loading indicator
+                    generateIdeasButton.disabled = true; // Disable button during API call
+
+                    // Prompt for the Gemini API
+                    const prompt = "Berikan 3 ide program inovatif dan kekinian untuk Pusat Informasi dan Konseling Remaja (PIK-R). Setiap ide harus fokus pada tema yang relevan bagi remaja Indonesia saat ini (misalnya kesehatan mental, pengembangan diri, literasi digital, anti-bullying, atau kreativitas). Untuk setiap ide, sertakan: 1. 'judul' (maksimal 4 kata dan menarik), 2. 'deskripsi' (15-25 kata yang menjelaskan program), 3. 'ikon' (satu nama kelas ikon Font Awesome yang paling relevan dan umum, contoh: 'fa-brain' atau 'fa-lightbulb' atau 'fa-users').";
+                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                    
+                    // Payload for the Gemini API request
+                    const payload = {
+                        contents: chatHistory,
+                        generationConfig: {
+                            responseMimeType: "application/json", // Expecting JSON response
+                            responseSchema: { // Define the expected JSON structure
+                                type: "ARRAY",
+                                items: {
+                                    type: "OBJECT",
+                                    properties: {
+                                        "judul": { "type": "STRING", "description": "Judul program, maksimal 4 kata dan menarik." },
+                                        "deskripsi": { "type": "STRING", "description": "Deskripsi singkat program, 15-25 kata." },
+                                        "ikon": { "type": "STRING", "description": "Satu nama kelas ikon Font Awesome yang relevan (misal: 'fa-brain')."}
+                                    },
+                                    required: ["judul", "deskripsi", "ikon"]
+                                }
+                            }
+                        }
+                    };
+
+                    const apiKey = ""; // API key will be injected by the environment
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            console.error('Error from Gemini API:', errorData);
+                            throw new Error(`Gagal mengambil data dari Gemini API: ${response.statusText}. Detail: ${JSON.stringify(errorData.error?.message || errorData)}`);
+                        }
+
+                        const result = await response.json();
+                        
+                        // Check if the response structure is as expected
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            
+                            const generatedText = result.candidates[0].content.parts[0].text;
+                            let ideas;
+                            try {
+                                ideas = JSON.parse(generatedText); // Parse the JSON string
+                            } catch (e) {
+                                console.error("Gagal mem-parsing JSON dari Gemini:", e, "Raw text:", generatedText);
+                                showMessage("Terjadi kesalahan saat memproses ide dari AI. Format tidak sesuai.", true);
+                                return;
+                            }
+
+                            // If ideas are successfully parsed and is an array
+                            if (Array.isArray(ideas)) {
+                                ideas.forEach(idea => {
+                                    ideaCounter++;
+                                    const aosDelay = ideaCounter * 100; // Stagger AOS delay
+                                    // Create HTML for the new idea card
+                                    const newIdeaCard = `
+                                        <div data-aos="fade-up" data-aos-delay="${aosDelay}">
+                                            <div class="custom-card ide-program-card-ai p-6">
+                                                <span class="ai-badge">✨ AI</span>
+                                                <div class="program-icon-container">
+                                                    <i class="fas ${idea.ikon || 'fa-star'}"></i>
+                                                </div>
+                                                <h3 class="text-xl font-semibold mb-2">${idea.judul || 'Ide Baru'}</h3>
+                                                <p class="text-sm">${idea.deskripsi || 'Deskripsi program akan muncul di sini.'}</p>
+                                            </div>
+                                            <p class="mt-4 text-lg font-bold text-[var(--biru-utama)]">${idea.judul || 'Program Inovatif'}</p>
+                                        </div>
+                                    `;
+                                    programIdeasGrid.insertAdjacentHTML('beforeend', newIdeaCard); // Add to grid
+                                });
+                                AOS.refresh(); // Refresh AOS to apply animations to new elements
+                                showMessage(`${ideas.length} ide program baru berhasil dibuat oleh AI!`, false);
+                            } else {
+                                console.error("Format ide dari AI tidak sesuai (bukan array):", ideas);
+                                showMessage("Format ide dari AI tidak sesuai.", true);
+                            }
+                        } else {
+                            console.error('Struktur respons tidak sesuai atau tidak ada kandidat:', result);
+                            showMessage("Gagal mendapatkan ide dari AI. Coba lagi nanti.", true);
+                        }
+
+                    } catch (error) {
+                        console.error('Error fetching ideas from Gemini API:', error);
+                        showMessage(`Terjadi kesalahan: ${error.message}. Silakan coba lagi.`, true);
+                    } finally {
+                        loadingIdeasText.style.display = 'none'; // Hide loading indicator
+                        generateIdeasButton.disabled = false; // Re-enable button
+                    }
+                });
+            }
+            // --- End of Gemini API Feature ---
+
+            // --- Modal Functionality ---
+            const modalOverlay = document.getElementById('modal-container');
+            const modalContentDynamic = document.getElementById('modal-content-dynamic');
+
+            // Function to open a modal with specified HTML content
+            function openModal(contentHTML, modalClass = '', maxWidth = '600px') {
+                modalContentDynamic.innerHTML = contentHTML;
+                modalContentDynamic.className = 'modal-content'; // Reset classes
+                if(modalClass) modalContentDynamic.classList.add(modalClass); // Add specific modal class
+                modalContentDynamic.style.maxWidth = maxWidth; // Set max width for responsiveness
+                modalOverlay.classList.add('show'); // Display the modal
+
+                // Add event listener to the close button within the modal
+                const closeButton = modalContentDynamic.querySelector('.modal-close-button');
+                if (closeButton) {
+                    closeButton.addEventListener('click', closeModal);
+                }
+            }
+
+            // Function to close the currently open modal
+            function closeModal() {
+                modalOverlay.classList.remove('show');
+                modalContentDynamic.innerHTML = ''; // Clear modal content
+            }
+
+            // Event listener to close modal if user clicks on the overlay (outside content)
+            modalOverlay.addEventListener('click', (event) => {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            // --- Shelf Check PIK-R Modal ---
+            const shelfCheckButtons = document.querySelectorAll('.shelf-check-button');
+            // Data for different shelf checks (quizzes)
+            const shelfCheckData = {
+                "1": { /* Kesejahteraan Mental */
+                    title: "Cek Kesejahteraan Mental",
+                    questions: [
+                        { q: "Seberapa sering kamu merasa bahagia akhir-akhir ini?", o: ["Sangat sering", "Sering", "Kadang-kadang", "Jarang"] },
+                        { q: "Apakah kamu merasa memiliki energi yang cukup untuk aktivitas sehari-hari?", o: ["Selalu", "Sering", "Kadang-kadang", "Jarang"] },
+                        { q: "Bagaimana kualitas tidurmu belakangan ini?", o: ["Sangat baik", "Baik", "Cukup", "Buruk"] }
+                    ],
+                    results: { // Feedback based on score
+                        high: "Luar biasa! Kesejahteraan mentalmu tampak sangat baik. Pertahankan pola hidup positifmu!",
+                        medium: "Kondisi mentalmu cukup baik. Terus jaga keseimbangan hidup dan jangan ragu mencari dukungan jika perlu.",
+                        low: "Sepertinya ada beberapa hal yang membebani pikiranmu. Penting untuk meluangkan waktu untuk diri sendiri dan berbicara dengan orang yang kamu percaya."
+                    }
+                },
+                "2": { /* Hubungan Sosial */
+                    title: "Cek Hubungan Sosial",
+                    questions: [
+                        { q: "Apakah kamu merasa memiliki teman yang bisa diandalkan?", o: ["Ya, banyak", "Ya, beberapa", "Tidak yakin", "Tidak punya"] },
+                        { q: "Seberapa sering kamu menghabiskan waktu berkualitas dengan teman atau keluarga?", o: ["Setiap hari", "Beberapa kali seminggu", "Jarang", "Hampir tidak pernah"] },
+                        { q: "Apakah kamu merasa nyaman menjadi diri sendiri di lingkungan sosialmu?", o: ["Selalu nyaman", "Sering nyaman", "Kadang tidak nyaman", "Sering tidak nyaman"] }
+                    ],
+                     results: {
+                        high: "Selamat! Hubungan sosialmu terlihat kuat dan suportif. Ini adalah aset berharga!",
+                        medium: "Hubungan sosialmu cukup baik. Teruslah merawat koneksi yang ada dan terbuka untuk pertemanan baru.",
+                        low: "Mungkin kamu merasa sedikit kesepian atau kurang terhubung. Cobalah untuk menjangkau orang-orang terdekat atau mencari komunitas baru."
+                    }
+                },
+                "3": { /* Manajemen Stres */
+                    title: "Cek Manajemen Stres",
+                    questions: [
+                        { q: "Seberapa sering kamu merasa tertekan atau stres dalam seminggu terakhir?", o: ["Tidak pernah", "Jarang", "Kadang-kadang", "Sering"] },
+                        { q: "Apakah kamu memiliki cara yang sehat untuk mengatasi stres?", o: ["Ya, beberapa cara efektif", "Ya, satu atau dua cara", "Belum menemukan cara yang pas", "Tidak punya"] },
+                        { q: "Ketika stres, apakah kamu mudah marah atau kehilangan kesabaran?", o: ["Jarang sekali", "Kadang-kadang", "Sering", "Sangat sering"] }
+                    ],
+                     results: {
+                        high: "Hebat! Kamu tampaknya memiliki kemampuan manajemen stres yang baik. Pertahankan!",
+                        medium: "Manajemen stresmu cukup baik. Ingatlah untuk selalu meluangkan waktu relaksasi dan mengenali pemicu stres.",
+                        low: "Kamu mungkin sedang menghadapi tingkat stres yang cukup tinggi. Penting untuk mencari cara mengatasi stres yang sehat dan efektif. Jangan ragu meminta bantuan."
+                    }
+                }
+            };
+
+            // Add event listeners to shelf check buttons
+            shelfCheckButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const checkId = button.dataset.checkId;
+                    const data = shelfCheckData[checkId];
+                    let currentQuestionIndex = 0;
+                    let answers = []; // Store user's answers
+
+                    // Function to render the current question in the modal
+                    function renderQuestion() {
+                        const questionData = data.questions[currentQuestionIndex];
+                        let optionsHTML = '';
+                        // Generate HTML for radio button options
+                        questionData.o.forEach((option, index) => {
+                            optionsHTML += `
+                                <label class="block">
+                                    <input type="radio" name="quizOption" value="${index}" class="mr-2"> ${option}
+                                </label>
+                            `;
+                        });
+
+                        // HTML for the quiz modal content
+                        const quizHTML = `
+                            <button class="modal-close-button" aria-label="Tutup">×</button>
+                            <h3 class="modal-title shelf-check-modal">${data.title} (${currentQuestionIndex + 1}/${data.questions.length})</h3>
+                            <div class="quiz-question">
+                                <p>${questionData.q}</p>
+                                <div class="quiz-options">${optionsHTML}</div>
+                            </div>
+                            ${currentQuestionIndex < data.questions.length - 1 ? 
+                                '<button class="quiz-button next float-right" id="next-question-btn" disabled>Lanjut <i class="fas fa-arrow-right ml-1"></i></button>' : 
+                                '<button class="quiz-button submit float-right" id="submit-quiz-btn" disabled>Lihat Hasil <i class="fas fa-check-circle ml-1"></i></button>'
+                            }
+                        `;
+                        openModal(quizHTML, 'shelf-check-modal', '550px'); // Open modal with quiz content
+
+                        // Enable Next/Submit button once an option is selected
+                        const radioOptions = modalContentDynamic.querySelectorAll('input[name="quizOption"]');
+                        const nextButton = modalContentDynamic.querySelector('#next-question-btn');
+                        const submitButton = modalContentDynamic.querySelector('#submit-quiz-btn');
+
+                        radioOptions.forEach(radio => {
+                            radio.addEventListener('change', () => {
+                                if(nextButton) nextButton.disabled = false;
+                                if(submitButton) submitButton.disabled = false;
+                            });
+                        });
+                        
+                        // Event listener for "Next" button
+                        if (nextButton) {
+                            nextButton.addEventListener('click', () => {
+                                const selectedOption = modalContentDynamic.querySelector('input[name="quizOption"]:checked');
+                                if (selectedOption) {
+                                    answers.push(parseInt(selectedOption.value)); // Store answer
+                                    currentQuestionIndex++;
+                                    renderQuestion(); // Render next question
+                                }
+                            });
+                        }
+                        // Event listener for "Submit" button (last question)
+                        if (submitButton) {
+                             submitButton.addEventListener('click', () => {
+                                const selectedOption = modalContentDynamic.querySelector('input[name="quizOption"]:checked');
+                                if (selectedOption) {
+                                    answers.push(parseInt(selectedOption.value));
+                                    showResults(); // Calculate and show results
+                                }
+                            });
+                        }
+                    }
+
+                    // Function to calculate score and display results
+                    function showResults() {
+                        // Simple scoring: lower index value = better. So, 3 - val gives higher score for better options.
+                        const totalScore = answers.reduce((sum, val) => sum + (data.questions[0].o.length - 1 - val), 0); 
+                        let resultCategory;
+                        const maxPossibleScorePerQuestion = data.questions[0].o.length - 1;
+                        const totalMaxScore = data.questions.length * maxPossibleScorePerQuestion;
+
+                        // Determine result category based on score percentage
+                        if (totalScore >= totalMaxScore * 0.7) { // ~70% or more
+                            resultCategory = 'high';
+                        } else if (totalScore >= totalMaxScore * 0.4) { // ~40% to 70%
+                            resultCategory = 'medium';
+                        } else { // Below 40%
+                            resultCategory = 'low';
+                        }
+                        
+                        const resultText = data.results[resultCategory];
+                        // HTML for the results modal
+                        const resultHTML = `
+                            <button class="modal-close-button" aria-label="Tutup">×</button>
+                            <h3 class="modal-title shelf-check-modal">Hasil ${data.title}</h3>
+                            <div class="text-center p-4">
+                                <p class="text-lg mb-4">${resultText}</p>
+                                <i class="fas ${resultCategory === 'high' ? 'fa-smile-beam' : resultCategory === 'medium' ? 'fa-meh' : 'fa-frown' } text-6xl" style="color: ${resultCategory === 'high' ? 'var(--biru-utama)' : resultCategory === 'medium' ? 'var(--kuning-tua)' : 'var(--oranye-cerah)'};"></i>
+                            </div>
+                            <button class="quiz-button next mx-auto block mt-6" onclick="document.getElementById('modal-container').classList.remove('show')">Selesai</button>
+                        `;
+                        openModal(resultHTML, 'shelf-check-modal', '500px');
+                    }
+                    renderQuestion(); // Start the quiz by rendering the first question
+                });
+            });
+
+            // --- Bank File PIK-R Modal ---
+            const bankFileTriggers = document.querySelectorAll('.bank-file-trigger');
+            // Data for file bank (PDFs, etc.)
+            const bankFileData = {
+                "modul1": {
+                    title: "Bank Modul 1: Materi Dasar",
+                    files: [
+                        { name: "Pengenalan PIK-R.pdf", url: "#download-pengenalan", viewUrl: "#view-pengenalan" },
+                        { name: "Kesehatan Reproduksi Remaja.pdf", url: "#download-kespro", viewUrl: "#view-kespro" },
+                        { name: "Pubertas dan Perubahannya.pdf", url: "#download-pubertas", viewUrl: "#view-pubertas" }
+                    ]
+                },
+                "modul2": {
+                    title: "Bank Modul 2: Materi Lanjutan",
+                    files: [
+                        { name: "Napza dan Bahayanya.pdf", url: "#download-napza", viewUrl: "#view-napza" },
+                        { name: "Pencegahan HIV/AIDS.pdf", url: "#download-hivaids", viewUrl: "#view-hivaids" },
+                        { name: "Life Skills untuk Remaja.pdf", url: "#download-lifeskills", viewUrl: "#view-lifeskills" }
+                    ]
+                },
+                 "modul3": {
+                    title: "Bank Modul 3: Studi Kasus",
+                    files: [
+                        { name: "Studi Kasus 1 - Bullying.pdf", url: "#download-kasus1", viewUrl: "#view-kasus1" },
+                        { name: "Studi Kasus 2 - Pernikahan Dini.pdf", url: "#download-kasus2", viewUrl: "#view-kasus2" }
+                    ]
+                }
+            };
+
+            // Add event listeners to bank file trigger cards
+            bankFileTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const modulId = trigger.dataset.modulId;
+                    const data = bankFileData[modulId];
+                    if (!data) return; // Exit if no data for this ID
+
+                    let filesHTML = '';
+                    // Generate HTML for the list of files
+                    data.files.forEach(file => {
+                        filesHTML += `
+                            <div class="pdf-list-item">
+                                <span class="pdf-title">${file.name}</span>
+                                <div class="pdf-actions">
+                                    <a href="${file.viewUrl}" target="_blank" title="Lihat File"><i class="fas fa-eye"></i> Lihat</a>
+                                    <a href="${file.url}" download title="Unduh File"><i class="fas fa-download"></i> Unduh</a>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    // HTML for the file bank modal
+                    const modalHTML = `
+                        <button class="modal-close-button" aria-label="Tutup">×</button>
+                        <h3 class="modal-title">${data.title}</h3>
+                        <div class="pdf-list">${filesHTML.length > 0 ? filesHTML : '<p>Belum ada file tersedia untuk modul ini.</p>'}</div>
+                    `;
+                    openModal(modalHTML, 'bank-file-modal', '700px'); // Open modal with file list
+                });
+            });
+
+            // --- Masalah & Solusi Modal ---
+            const masalahCards = document.querySelectorAll('.masalah-card');
+            // Data for common problems and their solutions
+            const solusiData = {
+                "masalah1": { title: "Solusi: Kurangnya Minat Remaja", content: "Adakan kegiatan yang lebih interaktif dan sesuai tren remaja (misalnya workshop TikTok edukatif, kompetisi e-sports dengan pesan positif). Libatkan influencer remaja lokal. Buat konten promosi yang menarik secara visual di media sosial yang sering digunakan remaja." },
+                "masalah2": { title: "Solusi: Kesulitan Ide Program", content: "Gunakan fitur 'Hasilkan Ide Program Baru' di website ini! Ajak anggota untuk brainstorming rutin. Lakukan survei kebutuhan dan minat remaja di sekitar. Amati tren program PIK-R lain yang sukses dan adaptasi." },
+                "masalah3": { title: "Solusi: Kendala Pendanaan", content: "Ajukan proposal ke instansi terkait (Dinas PPKB, sekolah). Cari sponsor dari usaha lokal. Adakan kegiatan penggalangan dana kreatif (misalnya bazar, penjualan merchandise PIK-R). Manfaatkan sumber daya gratis atau murah." },
+                "masalah4": { title: "Solusi: Promosi Kurang Efektif", content: "Optimalkan media sosial dengan konten reguler dan menarik (video pendek, infografis, kuis). Jalin kerjasama dengan OSIS atau ekskul lain untuk promosi silang. Manfaatkan mading sekolah atau papan pengumuman desa. Adakan acara 'Open House PIK-R'." },
+                "masalah5": { title: "Solusi: Manajemen Waktu Anggota", content: "Buat jadwal kegiatan yang fleksibel dan tidak bentrok dengan jam sekolah utama. Gunakan aplikasi kalender bersama. Delegasikan tugas secara merata. Berikan apresiasi bagi anggota yang aktif dan konsisten." },
+                "masalah6": { title: "Solusi: Regenerasi Pengurus Lambat", content: "Adakan program kaderisasi sejak dini. Berikan pelatihan kepemimpinan bagi anggota potensial. Buat sistem mentoring antara pengurus senior dan junior. Sosialisasikan pentingnya regenerasi untuk keberlanjutan PIK-R." }
+            };
+
+            // Add event listeners to "Masalah" cards
+            masalahCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const masalahId = card.dataset.masalahId;
+                    const data = solusiData[masalahId];
+                    if (!data) return; // Exit if no data
+
+                    // HTML for the solution modal
+                    const modalHTML = `
+                        <button class="modal-close-button" aria-label="Tutup">×</button>
+                        <h3 class="modal-title">${data.title}</h3>
+                        <p>${data.content}</p>
+                    `;
+                    openModal(modalHTML, 'solusi-modal'); // Open modal with solution
+                });
+            });
+
+
+            // --- Testimoni Slider (Slick Carousel) ---
+            $('.testimonial-slider').slick({
+                dots: true, // Show dots navigation
+                infinite: true, // Loop slides
+                speed: 500, // Transition speed
+                slidesToShow: 3, // Number of slides to show at once on desktop
+                slidesToScroll: 1, // Number of slides to scroll at once
+                autoplay: true, // Enable autoplay
+                autoplaySpeed: 4000, // Autoplay interval
+                arrows: true, // Show next/prev arrows
+                responsive: [ // Responsive settings for different screen sizes
+                    {
+                        breakpoint: 1024, // Tablet
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 640, // Mobile
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: false, // Hide arrows on mobile for a cleaner look
+                        }
+                    }
+                ]
+            });
+
+        });
+    </script>
+</body>
+</html>
